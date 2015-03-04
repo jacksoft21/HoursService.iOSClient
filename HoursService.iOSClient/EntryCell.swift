@@ -11,8 +11,6 @@ import UIKit
 class EntryCell: UITableViewCell {
     
     @IBOutlet weak var hours: UILabel!
-    
     @IBOutlet weak var comments: UILabel!
-    
     @IBOutlet weak var times: UILabel!
 }

@@ -10,31 +10,31 @@
 	<string>HoursService.iOSClient</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>0A1596A7B6D148604D5BC19B60FA0B7C3F02B3F9</key>
-		<string>https://github.com/TangentMicroServices/HoursService.iOSClient.git</string>
+		<key>4471835030B36B18D1C5E9D15767C2FDBB32DFF1</key>
+		<string>https://github.com/jacksoft21/HoursService.iOSClient.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>HoursService.iOSClient/HoursService.iOSClient.xcodeproj</string>
+	<string>HoursService.iOSClient.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>0A1596A7B6D148604D5BC19B60FA0B7C3F02B3F9</key>
-		<string>../../..</string>
+		<key>4471835030B36B18D1C5E9D15767C2FDBB32DFF1</key>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/TangentMicroServices/HoursService.iOSClient.git</string>
+	<string>https://github.com/jacksoft21/HoursService.iOSClient.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>0A1596A7B6D148604D5BC19B60FA0B7C3F02B3F9</string>
+	<string>4471835030B36B18D1C5E9D15767C2FDBB32DFF1</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>0A1596A7B6D148604D5BC19B60FA0B7C3F02B3F9</string>
+			<string>4471835030B36B18D1C5E9D15767C2FDBB32DFF1</string>
 			<key>IDESourceControlWCCName</key>
-			<string>HoursService</string>
+			<string>HoursServiceGitRep</string>
 		</dict>
 	</array>
 </dict>
