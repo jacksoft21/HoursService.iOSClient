@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "HoursService_iOSClient.FirstViewController.numberOfSectionsInTableView (HoursService_iOSClient.FirstViewController)(ObjectiveC.UITableView) -&gt; Swift.Int:FirstViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "groupedEntriesList">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "HoursService_iOSClient.FirstViewController.tableView (HoursService_iOSClient.FirstViewController)(ObjectiveC.UITableView, numberOfRowsInSection : Swift.Int) -&gt; Swift.Int:FirstViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "groupedEntriesList">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "HoursService_iOSClient.ServiceApi.addEntry (HoursService_iOSClient.ServiceApi)(HoursService_iOSClient.EntryModel, token : Swift.String, callback : (Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ():ServiceApi.swift">
+      </ContextState>
+      <ContextState
+         contextName = "HoursService_iOSClient.FirstViewController.groupEntriesByWeekday (HoursService_iOSClient.FirstViewController)() -&gt; ():FirstViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "entriesList">
+            </PersistentString>
+            <PersistentString
+               value = "groupedEntriesList">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
