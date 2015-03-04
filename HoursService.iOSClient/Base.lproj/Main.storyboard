@@ -143,19 +143,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Comments" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="bjc-He-jDa">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Comments" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="bjc-He-jDa">
                                 <rect key="frame" x="24" y="72" width="273" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="yes" spellCheckingType="yes" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Hours" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="yig-w1-IMM">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Hours" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="yig-w1-IMM">
                                 <rect key="frame" x="24" y="117" width="273" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="yes" spellCheckingType="yes" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Day" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="TWD-hZ-bJ6">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Day" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="TWD-hZ-bJ6">
                                 <rect key="frame" x="24" y="162" width="273" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -172,7 +172,7 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="R1j-P4-1pV">
                                 <rect key="frame" x="102" y="291" width="51" height="31"/>
                             </switch>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Start Time" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="0PZ-6A-bf9">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Start Time" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="0PZ-6A-bf9">
                                 <rect key="frame" x="24" y="205" width="273" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -181,7 +181,7 @@
                                     <action selector="btnStartTimePressed:" destination="8rJ-Kc-sve" eventType="touchDown" id="Zve-lt-LGF"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="End Time" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="vhS-oy-KH2">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="End Time" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="vhS-oy-KH2">
                                 <rect key="frame" x="24" y="248" width="273" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -193,6 +193,23 @@
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TWD-hZ-bJ6" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="8" id="1Z9-M7-FCI"/>
+                            <constraint firstItem="vhS-oy-KH2" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="8" id="5s5-wN-8Lm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vhS-oy-KH2" secondAttribute="trailing" constant="7" id="G5f-l6-Cha"/>
+                            <constraint firstItem="bjc-He-jDa" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="topMargin" constant="72" id="HXS-Z7-yQS"/>
+                            <constraint firstItem="yig-w1-IMM" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="8" id="QVc-1k-F0W"/>
+                            <constraint firstItem="yig-w1-IMM" firstAttribute="top" secondItem="bjc-He-jDa" secondAttribute="bottom" constant="15" id="ULn-4n-OQJ"/>
+                            <constraint firstItem="bjc-He-jDa" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="8" id="Uyc-Vh-OGR"/>
+                            <constraint firstItem="TWD-hZ-bJ6" firstAttribute="top" secondItem="yig-w1-IMM" secondAttribute="bottom" constant="15" id="Vxa-G4-B1f"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0PZ-6A-bf9" secondAttribute="trailing" constant="7" id="Zak-cX-NiY"/>
+                            <constraint firstItem="vhS-oy-KH2" firstAttribute="top" secondItem="0PZ-6A-bf9" secondAttribute="bottom" constant="13" id="dJa-jv-mIB"/>
+                            <constraint firstItem="0PZ-6A-bf9" firstAttribute="top" secondItem="TWD-hZ-bJ6" secondAttribute="bottom" constant="13" id="ldv-5C-WoA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yig-w1-IMM" secondAttribute="trailing" constant="7" id="m4v-4H-mv8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TWD-hZ-bJ6" secondAttribute="trailing" constant="7" id="pZA-eX-nPd"/>
+                            <constraint firstItem="0PZ-6A-bf9" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="8" id="rnn-hh-b88"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bjc-He-jDa" secondAttribute="trailing" constant="7" id="tUo-wd-lcn"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ejh-w9-iaV">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="iXy-j6-PXg">
@@ -218,7 +235,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1854" y="192"/>
+            <point key="canvasLocation" x="1699" y="170"/>
         </scene>
         <!--My Entry-->
         <scene sceneID="HPz-Lv-BmF">
@@ -517,8 +534,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="dashboard.png" width="40" height="32"/>
-        <image name="entries.png" width="40" height="32"/>
+        <image name="dashboard.png" width="30" height="38"/>
+        <image name="entries.png" width="30" height="38"/>
         <image name="tangent_logo.png" width="215" height="100"/>
     </resources>
 </document>
