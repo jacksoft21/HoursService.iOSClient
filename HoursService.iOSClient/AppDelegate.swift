@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 window?.rootViewController = sb.instantiateViewControllerWithIdentifier("TabVC") as? UIViewController
             }else
             {
-                window?.rootViewController = sb.instantiateInitialViewController() as LoginViewController
+                window?.rootViewController = sb.instantiateInitialViewController() as! LoginViewController
             }
             window?.makeKeyAndVisible()
         }

@@ -8,7 +8,7 @@
 
 
 import UIKit
-import AlamoFire
+import Alamofire
 
 public class LoginViewController: UIViewController {
     
@@ -56,7 +56,7 @@ public class LoginViewController: UIViewController {
         UIApplication.sharedApplication().endIgnoringInteractionEvents()
     }
     
-    public override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    public override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         self.view.endEditing(true)
     }
     

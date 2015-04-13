@@ -43,20 +43,20 @@ class EntryModel : NSObject {
     var user:Int
     
     init(dictEntry:NSDictionary){
-        id = dictEntry["id"] as Int
-        comments = dictEntry["comments"] as String
-        hours = dictEntry["hours"] as String
-        created = dictEntry["created"] as String
-        date = dictEntry["day"] as String
-        endtime = dictEntry["end_time"] as String
-        overtime = dictEntry["overtime"] as Bool
-        project_id = dictEntry["project_id"] as Int
-        project_task_id = dictEntry["project_task_id"] as Int
-        start_time = dictEntry["start_time"] as String
-        status = dictEntry["status"] as String
-        tags = dictEntry["tags"] as String
-        updated = dictEntry["updated"] as String
-        user = dictEntry["user"] as Int
+        id = dictEntry["id"] as! Int
+        comments = dictEntry["comments"] as! String
+        hours = dictEntry["hours"] as! String
+        created = dictEntry["created"] as! String
+        date = dictEntry["day"] as! String
+        endtime = dictEntry["end_time"] as! String
+        overtime = dictEntry["overtime"] as! Bool
+        project_id = dictEntry["project_id"] as! Int
+        project_task_id = dictEntry["project_task_id"] as! Int
+        start_time = dictEntry["start_time"] as! String
+        status = dictEntry["status"] as! String
+        tags = dictEntry["tags"] as! String
+        updated = dictEntry["updated"] as! String
+        user = dictEntry["user"] as! Int
     }
     override init() {
         id = 0

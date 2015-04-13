@@ -45,10 +45,9 @@ class EntryScreenViewController: UIViewController {
         UIApplication.sharedApplication().endIgnoringInteractionEvents()
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         self.view.endEditing(true)
     }
-    
     func clearForm(){
         self.txtComments.text = ""
         self.txtHours.text = "8";
@@ -189,24 +188,24 @@ class EntryScreenViewController: UIViewController {
     func convertDateFormat(dateString:NSString)->String{
         let formatter  = NSDateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
-        var date:NSDate = formatter.dateFromString(dateString)!
+        var date:NSDate = formatter.dateFromString(dateString as String)!
         
         
         formatter.dateFormat = "d MMMM yyyy"
         var converted:NSString = formatter.stringFromDate(date)
 
-        return converted
+        return converted as String
     }
     func convertTimeFormat(timeString:NSString)->String{
         let formatter  = NSDateFormatter()
         formatter.dateFormat = "HH:mm:ss"
         
-        var date:NSDate = formatter.dateFromString(timeString)!
+        var date:NSDate = formatter.dateFromString(timeString as String)!
         
         formatter.dateFormat = "H:mm"
         var converted:NSString = formatter.stringFromDate(date)
         
-        return converted
+        return converted as String
     }
     
     override func viewDidLoad() {
@@ -216,7 +215,7 @@ class EntryScreenViewController: UIViewController {
         if tempEntry != nil
         {
             txtComments.text = tempEntry!.comments
-            txtHours.text = tempEntry!.hours
+            txtHours.text = tempEntry!.hours as String
             txtDay.text = convertDateFormat(tempEntry!.date)
             txtStartTime.text = convertTimeFormat(tempEntry!.start_time)
             txtEndTime.text = convertTimeFormat(tempEntry!.endtime)

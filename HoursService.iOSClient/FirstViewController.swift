@@ -51,7 +51,7 @@ class FirstViewController: UITableViewController {
         formatter.dateFormat = "yyyy-MM-dd"
         
         let todayDate = formatter.dateFromString(dateString)!
-        let myCalendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)
+        let myCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
         let myComponents = myCalendar?.components(.WeekdayCalendarUnit, fromDate: todayDate)
 
 
@@ -74,21 +74,21 @@ class FirstViewController: UITableViewController {
         
         //Add Entry to according weekday
         for oneEntry in entriesList{
-            var modelEntry:EntryModel = oneEntry as EntryModel
+            var modelEntry:EntryModel = oneEntry as! EntryModel
             
-            var weekday:Int = getWeekDayFromDateString(modelEntry.date)
+            var weekday:Int = getWeekDayFromDateString(modelEntry.date as String)
             weekday = weekday - 1
-            let entry_dict:NSDictionary = (groupedEntriesList[weekday]) as NSDictionary
-            (entry_dict["entry_list"] as NSMutableArray).addObject(modelEntry)
+            let entry_dict:NSDictionary = (groupedEntriesList[weekday]) as! NSDictionary
+            (entry_dict["entry_list"] as! NSMutableArray).addObject(modelEntry)
         }
         var tempArray:NSMutableArray = NSMutableArray()
         
         //Remove empty Week entry list
         for var weekIndex  = 0;weekIndex < 7;weekIndex++
         {
-            let entryDict:NSDictionary = groupedEntriesList[weekIndex] as NSDictionary
+            let entryDict:NSDictionary = groupedEntriesList[weekIndex] as! NSDictionary
             var entryArray:NSArray
-            entryArray = (entryDict["entry_list"] as NSArray)
+            entryArray = (entryDict["entry_list"] as! NSArray)
             
             if entryArray.count != 0
             {
@@ -97,7 +97,7 @@ class FirstViewController: UITableViewController {
         }
         
         groupedEntriesList.removeAllObjects()
-        groupedEntriesList.addObjectsFromArray(tempArray)
+        groupedEntriesList.addObjectsFromArray(tempArray as [AnyObject])
         
         self.tvEntries.reloadData()
     }
@@ -128,10 +128,10 @@ class FirstViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let entryDict:NSDictionary = (groupedEntriesList[section] as NSDictionary)
-        let weekName:NSString = entryDict["week_name"] as String
+        let entryDict:NSDictionary = (groupedEntriesList[section] as! NSDictionary)
+        let weekName:NSString = entryDict["week_name"] as! String
 
-        return weekName
+        return weekName as String
     }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -143,7 +143,7 @@ class FirstViewController: UITableViewController {
         {
             return 0
         }
-        var entryList:NSArray = ((groupedEntriesList[section]) as NSDictionary)["entry_list"] as NSArray
+        var entryList:NSArray = ((groupedEntriesList[section]) as! NSDictionary)["entry_list"] as! NSArray
         return entryList.count
     }
     
@@ -154,27 +154,27 @@ class FirstViewController: UITableViewController {
         let formatter  = NSDateFormatter()
         formatter.dateFormat = "HH-mm-ss"
         
-        let todayDate = formatter.dateFromString(fulltimeString)!
-        let myCalendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)
+        let todayDate = formatter.dateFromString(fulltimeString as String)!
+        let myCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
         let myComponents = myCalendar?.components(NSCalendarUnit.CalendarUnitHour | NSCalendarUnit.CalendarUnitMinute, fromDate: todayDate)
         
         var convertedTime = NSString(format: "%02d:%02d", myComponents!.hour,myComponents!.minute)
-        return convertedTime
+        return convertedTime as String
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var entryCell:EntryCell = self.tableView.dequeueReusableCellWithIdentifier("entryCell") as EntryCell
+        var entryCell:EntryCell = self.tableView.dequeueReusableCellWithIdentifier("entryCell") as! EntryCell
 
 //        var entryModel = entriesList[indexPath.row] as EntryModel
 //        
 //        entryCell.comments.text = entryModel.comments
 //        entryCell.hours.text = entryModel.hours
 
-        var entryModel = ((groupedEntriesList[indexPath.section] as NSDictionary)["entry_list"] as NSArray)[indexPath.row] as EntryModel
+        var entryModel = ((groupedEntriesList[indexPath.section] as! NSDictionary)["entry_list"] as! NSArray)[indexPath.row] as! EntryModel
         
         entryCell.comments.text = entryModel.comments
-        entryCell.hours.text = entryModel.hours
+        entryCell.hours.text = entryModel.hours as String
         
-        entryCell.times.text = NSString(format: "%@ - %@", convertTimeHourAndMinute(entryModel.start_time), convertTimeHourAndMinute(entryModel.endtime))
+        entryCell.times.text = NSString(format: "%@ - %@", convertTimeHourAndMinute(entryModel.start_time), convertTimeHourAndMinute(entryModel.endtime)) as String
         
         return entryCell
     }
@@ -186,7 +186,7 @@ class FirstViewController: UITableViewController {
     override func tableView(tableView: (UITableView!), commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: (NSIndexPath!)) {
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
             
-            var deleteId:Int = (entriesList[indexPath.row] as EntryModel).id
+            var deleteId:Int = (entriesList[indexPath.row] as! EntryModel).id
             var token = NSUserDefaults.standardUserDefaults().stringForKey("token")
             
             startLoader()
@@ -210,17 +210,17 @@ class FirstViewController: UITableViewController {
             
             if(sender is EntryCell){
                 
-                let cell = sender as EntryCell
+                let cell = sender as! EntryCell
                 let indexPath = self.tableView.indexPathForCell(cell)
                 
                 // load the selected model
 //                let comments = self.entriesList[indexPath!.row].comments as String
 //                let hours = self.entriesList[indexPath!.row].hours as String
                 
-                let detail = segue.destinationViewController as DetailViewController
+                let detail = segue.destinationViewController as! DetailViewController
                 // set the model to be viewed
-                let entryDict:NSDictionary = groupedEntriesList[indexPath!.section] as NSDictionary
-                let entryModel:EntryModel = ((entryDict["entry_list"] as NSArray)[indexPath!.row]) as EntryModel
+                let entryDict:NSDictionary = groupedEntriesList[indexPath!.section] as! NSDictionary
+                let entryModel:EntryModel = ((entryDict["entry_list"] as! NSArray)[indexPath!.row]) as! EntryModel
                 
                 detail.entryModel = entryModel;//self.entriesList[indexPath!.row] as? EntryModel
                 

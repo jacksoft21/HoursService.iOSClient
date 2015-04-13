@@ -8,7 +8,7 @@
 
 
 import Foundation
-import AlamoFire
+import Alamofire
 typealias ServiceResponse = (String?, NSError?) -> Void
 
 public class ServiceApi {
@@ -35,7 +35,7 @@ public class ServiceApi {
             .responseJSON { (request, response, JSON, error) in
                 
                 var statusCode = response?.statusCode
-                var responseJson = JSON as NSDictionary
+                var responseJson = JSON as! NSDictionary
                 
                 if(statusCode != nil && statusCode! == 200){
                     /*
@@ -43,7 +43,7 @@ public class ServiceApi {
                         token = fb5df470df0fa3727c49a61608996618d0954289;
                     }
                     */
-                    token = responseJson.objectForKey("token") as String
+                    token = responseJson.objectForKey("token") as! String
                     
                     if(token == ""){
                         callback(nil, "Cant sign you in!!")
@@ -83,12 +83,12 @@ public class ServiceApi {
                 
                 if(statusCode! == 200){
 
-                    var results: NSArray = (JSON as NSArray)
+                    var results: NSArray = (JSON as! NSArray)
                     var callback_array:NSMutableArray = NSMutableArray(capacity: results.count)
                     
                     for entryDict in results
                     {
-                        var entryModel = EntryModel(dictEntry: entryDict as NSDictionary)
+                        var entryModel = EntryModel(dictEntry: entryDict as! NSDictionary)
                         callback_array.addObject(entryModel)
                     }
                     callback(callback_array, nil)
@@ -106,14 +106,14 @@ public class ServiceApi {
         
         let todayDate = formatter.dateFromString(dateString)!
         
-        let myCalendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)
+        let myCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
         let myComponents = myCalendar?.components(NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay, fromDate: todayDate)
         
         var convertedDateString:NSString = NSString(format: "%d-%02d-%02d", myComponents!.year,myComponents!.month,myComponents!.day)
         
         println(convertedDateString)
         
-        return convertedDateString
+        return convertedDateString as String
     }
     
     //Add entry
@@ -127,7 +127,7 @@ public class ServiceApi {
             "project_id": 1,
             "project_task_id": 1,
             "status": "Open",
-            "day": convertDateFormat(entry.date),
+            "day": convertDateFormat(entry.date as String),
             "start_time": entry.start_time,
             "end_time": entry.endtime,
             "hours": entry.hours,
@@ -145,13 +145,13 @@ public class ServiceApi {
                 //Created successfully
                 if(statusCode != nil && statusCode! == 201){
                     
-                    var responseJson = JSON as NSDictionary
+                    var responseJson = JSON as! NSDictionary
                     
                     callback("Entry created successfully", nil)
                 }else{
                     
                     var error: NSError = NSError()
-                    var responseJson = JSON as NSDictionary
+                    var responseJson = JSON as! NSDictionary
                     
                     callback(nil, "Error creating entry")
                 }
@@ -164,14 +164,14 @@ public class ServiceApi {
     func changeEntry(entry: EntryModel, token: String, callback: (String?, String?) -> ()){
         
 //        var url:String = HOURS_SERVICE_URL + "/entry/"
-        var url:String = NSString(format: "%@/entry/%d",HOURS_SERVICE_URL, entry.id)
+        var url:String = NSString(format: "%@/entry/%d",HOURS_SERVICE_URL, entry.id) as String
         let params = [
             "comments": entry.comments as NSString,
             "user": 1,
             "project_id": 1,
             "project_task_id": 1,
             "status": "Open",
-            "day": convertDateFormat(entry.date),
+            "day": convertDateFormat(entry.date as String),
             "start_time": entry.start_time,
             "end_time": entry.endtime,
             "hours": entry.hours,
@@ -189,13 +189,13 @@ public class ServiceApi {
                 //Created successfully
                 if(statusCode != nil && statusCode! == 201){
                     
-                    var responseJson = JSON as NSDictionary
+                    var responseJson = JSON as! NSDictionary
                     
                     callback("Entry created successfully", nil)
                 }else{
                     
                     var error: NSError = NSError()
-                    var responseJson = JSON as NSDictionary
+                    var responseJson = JSON as! NSDictionary
                     
                     //callback(nil, "Error creating entry")
                     callback("Entry created successfully", nil)

@@ -28,7 +28,7 @@ class DetailViewController: UITableViewController {
     @IBOutlet weak var overtime:UILabel!
     
     @IBAction func onClickEdit(){
-        let entryScreenViewController = self.storyboard?.instantiateViewControllerWithIdentifier("EntryScreenViewController") as EntryScreenViewController
+        let entryScreenViewController = self.storyboard?.instantiateViewControllerWithIdentifier("EntryScreenViewController") as! EntryScreenViewController
         entryScreenViewController.tempEntry = entryModel
         entryScreenViewController.detailViewController = self
         
@@ -37,10 +37,10 @@ class DetailViewController: UITableViewController {
     
     func fillLabelsFromEntryModel(){
         self.lblComments!.text = entryModel?.comments
-        self.lblHours!.text = entryModel?.hours
-        self.day!.text = entryModel?.date
-        self.start_time!.text = entryModel?.start_time
-        self.end_time!.text = entryModel?.endtime
+        self.lblHours!.text = entryModel!.hours as String
+        self.day!.text = entryModel!.date as String
+        self.start_time!.text = entryModel!.start_time as String
+        self.end_time!.text = entryModel!.endtime as String
         
         if entryModel?.overtime == true
         {
